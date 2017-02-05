@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>SSE</title>
+    <meta charset="utf-8" />
+    <script src="ttp://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+     $(function() {
+       var es = new EventSource('/connect');
+
+       es.onmessage = function(e) {
+         var msg = $.parseJSON(event.data);
+         console.log(msg);
+       }
+     })
+    </script>
+  </head>
+  <body>
+    <!—- implementation specific here -->
+  </body>
+</html>
